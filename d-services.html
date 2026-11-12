@@ -1,0 +1,19 @@
+<!-- ============ 区块：能力 Services ============
+     可改内容在 js/site.config.js 的 services.items
+     动效：右侧描述随 hover 交叉淡入 -->
+<section class="section services" id="services">
+  <header class="services__head">
+    <p class="section__label" data-reveal>{{services.label}}</p>
+    <h2 class="section__title" data-reveal data-reveal-delay="80">{{services.title}}<em>.</em></h2>
+  </header>
+
+  <div class="services__grid">
+    <ul class="services__list">
+      {{#each services.items}}<li class="service" data-reveal data-reveal-delay="{{@i}}">
+        <span class="service__no">{{no}}</span>
+        <h3 class="service__title">{{title}}</h3>
+        <p class="service__desc">{{desc}}</p>
+      </li>{{/each}}
+    </ul>
+  </div>
+</section>

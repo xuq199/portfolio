@@ -1,0 +1,25 @@
+<!-- ============ 区块：简介 About ============
+     可改内容在 js/site.config.js 的 about 字段
+     动效：正文逐行遮罩上浮 / 时间线逐条淡入 -->
+<section class="section about" id="about">
+  <div class="about__head">
+    <p class="section__label" data-reveal>{{about.label}}</p>
+    <h2 class="section__title" data-reveal data-reveal-delay="80">About<em>.</em></h2>
+  </div>
+
+  <div class="about__body">
+    <div class="about__text">
+      {{#each about.lines}}<span class="reveal-line" data-reveal data-reveal-delay="{{@i}}"><span>{{this}}</span></span>{{/each}}
+    </div>
+
+    <aside class="about__side" data-reveal data-reveal-delay="220">
+      <h3 class="about__side-title">{{about.timeline.title}}</h3>
+      <ol class="timeline">
+        {{#each about.timeline.items}}<li class="timeline__item" data-reveal data-reveal-delay="{{@i}}">
+          <span class="timeline__year">{{year}}</span>
+          <span class="timeline__text">{{text}}</span>
+        </li>{{/each}}
+      </ol>
+    </aside>
+  </div>
+</section>

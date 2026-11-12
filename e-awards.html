@@ -1,0 +1,21 @@
+<!-- ============ 区块：荣誉 Awards ============
+     可改内容在 js/site.config.js 的 awards.items
+     动效：行分隔线擦除 + 序号位移 -->
+<section class="section awards" id="awards">
+  <header class="awards__head">
+    <div>
+      <p class="section__label" data-reveal>{{awards.label}}</p>
+      <h2 class="section__title" data-reveal data-reveal-delay="80">{{awards.title}}</h2>
+    </div>
+    <p class="awards__note" data-reveal data-reveal-delay="140">{{awards.note}}</p>
+  </header>
+
+  <ul class="awards__list">
+    {{#each awards.items}}<li class="award" data-reveal data-reveal-delay="{{@i}}">
+      <span class="award__no">{{no}}</span>
+      <span class="award__title">{{title}}</span>
+      <span class="award__org">{{org}}</span>
+      <span class="award__year">{{year}}</span>
+    </li>{{/each}}
+  </ul>
+</section>

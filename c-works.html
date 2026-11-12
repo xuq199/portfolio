@@ -1,0 +1,28 @@
+<!-- ============ 区块：作品 Works ============
+     可改内容在 js/site.config.js 的 works.items
+     增删项目 = 增删数组里的对象即可，无需改 HTML
+     动效：行分隔线擦除 / hover 缩略图跟随光标 / 序号与箭头位移 -->
+<section class="section works" id="works">
+  <header class="works__head">
+    <p class="section__label" data-reveal>{{works.label}}</p>
+    <h2 class="section__title" data-reveal data-reveal-delay="80">{{works.title}}<em>.</em></h2>
+  </header>
+
+  <ul class="works__list">
+    {{#each works.items}}<li class="work-row" data-reveal data-reveal-delay="{{@i}}">
+      <a class="work-row__link" href="{{href}}" data-cursor="View"
+         style="--c1:{{gradient.0}}; --c2:{{gradient.1}};">
+        <span class="work-row__id">{{id}}</span>
+        <span class="work-row__title">{{title}}</span>
+        <span class="work-row__cat">{{category}}</span>
+        <span class="work-row__year">{{year}}</span>
+        <span class="work-row__arrow" aria-hidden="true">↗</span>
+        <span class="work-row__thumb" aria-hidden="true">
+          {{#if cover}}<img src="{{cover}}" alt="">{{/if}}
+        </span>
+      </a>
+    </li>{{/each}}
+  </ul>
+
+  <p class="works__note" data-reveal>* 以上为占位示例项目，替换为你的真实作品即可。</p>
+</section>

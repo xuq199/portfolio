@@ -1,0 +1,43 @@
+<!-- ============ 区块：联系 Contact + 页脚 ============
+     可改内容在 js/site.config.js 的 contact / identity 字段
+     动效：邮箱放大描边 / 巨型签名鼠标视差 -->
+<section class="section contact" id="contact">
+  <p class="section__label" data-reveal>{{contact.label}}</p>
+
+  <h2 class="contact__big" data-reveal data-reveal-delay="60">{{{contact.big}}}</h2>
+
+  <div class="contact__grid">
+    <a class="contact__mail magnetic" href="mailto:{{contact.email}}" data-cursor="Write">
+      <span class="magnetic__in">{{contact.emailLabel}}</span>
+    </a>
+
+    <div class="contact__meta" data-reveal data-reveal-delay="140">
+      <div class="contact__block">
+        <span class="contact__k">Based in</span>
+        <span class="contact__v">{{contact.location}}</span>
+      </div>
+      <div class="contact__block">
+        <span class="contact__k">Time</span>
+        <span class="contact__v" data-clock>—</span>
+      </div>
+      <div class="contact__block">
+        <span class="contact__k">Elsewhere</span>
+        <span class="contact__v contact__socials">
+          {{#each contact.socials}}<a href="{{href}}" data-cursor="Go">{{name}} ↗</a>{{/each}}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__big" aria-hidden="true">{{identity.signature}}</div>
+  <div class="footer__grid">
+    <span>© <span data-year></span> {{identity.signature}} · 南充电影工业职业学院 · 数字媒体专业</span>
+    <span class="footer__links">
+      <a href="#top">回到顶部 ↑</a>
+      <a href="#works">作品</a>
+      <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+    </span>
+  </div>
+</footer>

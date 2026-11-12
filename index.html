@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>许秋泉 — 数字媒体设计</title>
+<meta name="description" content="许秋泉，数字媒体专业，南充电影工业职业学院。界面设计与交互方向作品集。">
+
+<meta property="og:title" content="许秋泉 — 数字媒体设计">
+<meta property="og:description" content="界面设计 · 交互原型 · 动效实现">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050b1c'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2300e0ff' font-family='serif'%3E%E8%AE%B8%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+<!-- 动态背景 -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<!-- 自定义光标 -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+  <span class="cursor-label" id="cursor-label"></span>
+</div>
+
+<!-- 预加载器 -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__word">许秋泉</div>
+  <div class="preloader__bar"><span></span></div>
+  <div class="preloader__meta">
+    <span>Digital Media · Portfolio</span>
+    <span class="preloader__num">000</span>
+  </div>
+</div>
+
+<!-- 顶部进度条 -->
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+<!-- 页头 -->
+<header class="header" id="header">
+  <a class="header__logo" href="#top"><i>许</i>秋泉</a>
+  <nav class="header__nav" aria-label="主导航">
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#services">Services</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menu-btn" aria-label="菜单" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- 移动端菜单 -->
+<div class="menu" id="menu">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#services">Services</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <small>南充电影工业职业学院 · 数字媒体专业</small>
+</div>
+
+<!-- 所有区块由 modules/*.html 注入到这里，顺序见 site.config.js 的 modules -->
+<main id="app"></main>
+
+<!-- Demo 说明 -->
+<button class="demo-btn" id="notice-btn" aria-haspopup="dialog" aria-expanded="false">i</button>
+<div class="notice" id="notice" role="dialog" aria-modal="false" aria-label="站点说明">
+  <div class="notice__card">
+    <button class="notice__close" aria-label="关闭">×</button>
+    <h4>这是可自行替换的模板</h4>
+    <p>作品、奖项、社交链接均为<strong>占位示例</strong>。所有内容集中在 <code>js/site.config.js</code>，改完刷新即可，无需动 HTML。</p>
+    <p>配色在同文件的 <code>theme</code> 字段：现在是深蓝 + 青色。</p>
+    <a href="https://github.com/" target="_blank" rel="noopener">部署教程 ↗</a>
+  </div>
+</div>
+
+<script src="js/site.config.js"></script>
+<script src="js/template.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>
